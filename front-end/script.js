@@ -3,8 +3,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const screen = document.getElementById('screen');
     const context = screen.getContext('2d');
 
+    const lineWidthRange = document.getElementById('lineWidthRange');
+    const lineWidthNumber = document.getElementById('lineWidthNumber');
+
+    lineWidthRange.onchange = event => {
+        lineWidthNumber.value = event.target.value;
+        context.lineWidth = event.target.value;
+    };
+    
+    lineWidthNumber.onchange = event => {
+        lineWidthRange.value = event.target.value
+        context.lineWidth = event.target.value;
+    };
+
     screen.width = 700;
     screen.height = 500;
+    context.lineWidth = lineWidthRange.value;
+    context.strokeStyle = 'black';
 
     const pencil = {
         active: false,
@@ -42,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
         pencil.currentPos.x = event.clientX;
         pencil.currentPos.y = event.clientY;
     }
-
+    
     cicle();
-
 });
