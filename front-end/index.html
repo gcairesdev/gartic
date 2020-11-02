@@ -9,18 +9,33 @@
 </head>
 <body>
     <canvas id="screen"></canvas>
-    <div>
-        <label for="lineWidth">Expessura da linha</label>
-        <input
-            min="1"
-            step="1"
-            value="1"
-            max="100"
-            type="range"
-            id="lineWidthRange"
-            name="lineWidthRange"
-        >
-        <input type="number" name="lineWidthNumber" id="lineWidthNumber" value="1">
+    <div id="controlls">
+        <div>
+            <label for="lineWidth">Expessura da linha</label>
+            <input
+                min="1"
+                step="1"
+                value="1"
+                max="100"
+                type="range"
+                id="lineWidthRange"
+                name="lineWidthRange"
+            >
+            <input
+                value="1"
+                type="number"
+                id="lineWidthNumber"
+                name="lineWidthNumber"
+            >
+        </div>
+        <div>
+            <label for="color">Cor</label>
+            <input
+                id="color"
+                type="color"
+                name="color"
+            >
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
